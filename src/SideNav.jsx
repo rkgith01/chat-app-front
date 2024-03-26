@@ -92,14 +92,15 @@ const SideNav = ({
         >
           {/* {console.log(`${apiEndPoint}localhost:3001/images/${image}`)} */}
           
-          {image ? (
+          {image && (
             <img
               // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
               src={image ? `https://chat-app-backend-7xse.onrender.com/image/${image}` : ""}
               className="object-cover w-8 h-8 rounded-lg"
               alt="avatar"
             />
-          ) : (
+          )} 
+          {!image ? (
             <div
               className={
                 " bg-green-500 w-[50px] h-[50px] rounded-full flex flex-col items-center justify-center "
@@ -109,7 +110,7 @@ const SideNav = ({
                 {<User2 size={18} className="w-full" />}
               </div>
             </div>
-          )}
+          ) : ""}
         </div>
 
         <button

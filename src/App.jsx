@@ -7,7 +7,7 @@ import Routes from './Routes'
 function App() {
 
   // axios.defaults.baseURL = "http://localhost:3001";
-  axios.defaults.baseURL = "https://chat-app-backend-phi-three.vercel.app";
+  axios.defaults.baseURL = "https://chat-app-backend-7xse.onrender.com";
   axios.defaults.withCredentials = true
   console.log( axios.defaults.baseURL)
   return (

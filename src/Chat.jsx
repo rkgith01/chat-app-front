@@ -114,7 +114,7 @@ const Chat = () => {
       setTimeout(() => {
         console.log("Disconneted, Trying to reconnect...");
         connetTows();
-      }, 1000);
+      }, 2000);
     });
   };
 

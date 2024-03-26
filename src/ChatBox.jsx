@@ -95,9 +95,9 @@ const ChatBox = ({
                       {message.sender === id ? "You" : username}
                     </div> */}
 
-                    {console.log(axios.defaults.baseURL)}
+                    {/* {console.log(axios.defaults.baseURL)} */}
                     {message.text}
-                    {console.log(message.file)}
+                    {/* {console.log(message.file)} */}
                     {message.file && (
                       <div>
                         <a

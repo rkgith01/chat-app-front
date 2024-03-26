@@ -118,7 +118,7 @@ const ProfilePage = ({ handleCloseProfilePage }) => {
         {image ? (
           <img
           // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
-          src={image ? `https://chat-app-backend-phi-three.vercel.app/images/${image}` : ""}
+          src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image}` : ""}
           className="object-cover shadow-xl w-[145px] h-[155px] rounded"
             alt="avatar"
           />

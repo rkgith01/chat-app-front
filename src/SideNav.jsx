@@ -95,7 +95,7 @@ const SideNav = ({
           {image ? (
             <img
               // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
-              src={image ? `https://chat-app-backend-phi-three.vercel.app/image/${image}` : ""}
+              src={image ? `https://chat-app-backend-7xse.onrender.com/image/${image}` : ""}
               className="object-cover w-8 h-8 rounded-lg"
               alt="avatar"
             />

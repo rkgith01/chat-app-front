@@ -9,7 +9,7 @@ const ChatUsers = ({
   online,
 }) => {
   // const { username, id } = useContext(UserContext);
-  const apiEndPoint = import.meta.env.BASE_URL
+  // const apiEndPoint = import.meta.env.BASE_URL
 
   return (
     <div className="mx-2 text-sm font-medium" key={id}>
@@ -23,9 +23,11 @@ const ChatUsers = ({
         // href="#"
         onClick={() => setSelectedUser(id)}
       >
+        {console.log({image}, "imageid:", image.id)}
         {online && image?.[id] ? (
           <img
-            src={`${apiEndPoint}images/${image[id]}`}
+            // src={`${apiEndPoint}images/${image[id]}`}
+            src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image}` : ""}
             className="object-cover w-[50px] h-[50px] rounded-full"
             alt="avatar"
           />

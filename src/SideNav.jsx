@@ -92,14 +92,14 @@ const SideNav = ({
         >
           {/* {console.log(`${apiEndPoint}localhost:3001/images/${image}`)} */}
           
-          {image && (
-            <img
-              // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
-              src={image ? `https://chat-app-backend-7xse.onrender.com/image/${image}` : ""}
-              className="object-cover w-8 h-8 rounded-lg"
-              alt="avatar"
-            />
-          )} 
+          <img
+            // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
+            src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image}` : ""}
+            className="object-cover w-8 h-8 rounded-lg"
+            alt="avatar"
+          />
+          {/* {image && (
+          )}  */}
           {!image ? (
             <div
               className={

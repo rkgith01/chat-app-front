@@ -24,10 +24,10 @@ const ChatUsers = ({
         onClick={() => setSelectedUser(id)}
       >
         {console.log({image}, "imageid:", image.id)}
-        {online && image?.[id] ? (
+        {online && image[id] ? (
           <img
             // src={`${apiEndPoint}images/${image[id]}`}
-            src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image}` : ""}
+            src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image[id]}` : ""}
             className="object-cover w-[50px] h-[50px] rounded-full"
             alt="avatar"
           />

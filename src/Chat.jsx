@@ -105,7 +105,7 @@ const Chat = () => {
 
   const connetTows = () => {
     // const ws = new WebSocket("ws://localhost:3001");
-    const ws = new WebSocket(`ws://chat-app-backend-7xse.onrender.com`);
+    const ws = new WebSocket(`wss://chat-app-backend-7xse.onrender.com`);
     // const ws = new WebSocket(`${apiEndPoint.replace(/^http/, 'ws:')}/https://chat-app-backend-7xse.onrender.com`);
     // const ws = new WebSocket(`${apiEndPoint.replace(/^http/, 'ws')}/`);
     setWs(ws);

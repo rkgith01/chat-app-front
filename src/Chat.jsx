@@ -127,91 +127,76 @@ const Chat = () => {
     // console.log(users)
   };
 
-  // const sendMessage = (e, file = null) => {
-  //   // let file = null
-  //   if (e && e.preventDefault()) {e.preventDefault()}
 
-  //      const message = { to: selectedUser, text: newMessage, file };
+  // const sendMessage = (e, file = null) => {
+  //   if (e) e.preventDefault();
+
+  //   const message = { to: selectedUser, text: newMessage, file };
+  //   ws.send(JSON.stringify(message));
 
   //   if (file) {
-  //     // Handle file messages immediately
-  //     const fileName = file.name; // Save the original file name
+  //     const fileName = file.name;
   //     setChatMessages((prev) => [
   //       ...prev,
   //       {
-  //        // Display the original file name along with the file
   //         sender: id,
   //         to: selectedUser,
   //         createdAt: new Date().toISOString(),
   //         _id: Date.now(),
-  //         file: fileName, // Save the original file name in the state
+  //         file: fileName,
   //       },
   //     ]);
   //   } else if (newMessage.trim()) {
-  //     // Handle text messages immediately
   //     setNewMessage("");
   //     setChatMessages((prev) => [
   //       ...prev,
   //       {
   //         text: newMessage,
   //         sender: id,
-  //         to: selectedUser,
-  //         createdAt: new Date().toISOString(),
   //         _id: Date.now(),
+  //         createdAt: new Date().toISOString(),
+  //         // file: file ? file.name : null,
+  //         file: null,
   //       },
   //     ]);
   //   }
+
   //   if (!newMessage.trim() && !file) {
-  //     toast.warn('Please enter a message before sending.',
-  //      {
+  //     toast.warn("Please enter a message before sending.", {
   //       position: "bottom-right",
   //     });
   //     return;
-  // }
-
-  // ws.send(JSON.stringify(message));
-
+  //   }
   // };
-  const sendMessage = (e, file = null) => {
-    if (e) e.preventDefault();
 
-    const message = { to: selectedUser, text: newMessage, file };
-    ws.send(JSON.stringify(message));
-
+  const sendMessage = (ev, file = null) => {
+    if (ev) ev.preventDefault();
+    ws.send(JSON.stringify({
+      to: selectedUser,
+      text: newMessage,
+      file,
+    }));
     if (file) {
-      const fileName = file.name;
-      setChatMessages((prev) => [
-        ...prev,
-        {
-          sender: id,
-          to: selectedUser,
-          createdAt: new Date().toISOString(),
-          _id: Date.now(),
-          file: fileName,
-        },
-      ]);
-    } else if (newMessage.trim()) {
-      setNewMessage("");
-      setChatMessages((prev) => [
-        ...prev,
-        {
-          text: newMessage,
-          sender: id,
-          _id: Date.now(),
-          createdAt: new Date().toISOString(),
-          // file: file ? file.name : null,
-          file: null,
-        },
-      ]);
+      axios.get('/messages/'+selectedUser).then(res => {
+        setChatMessages(res.data);
+      });
+    } else {
+      setNewMessage('');
+      setChatMessages(prev => ([...prev,{
+        text: newMessage,
+        sender: id,
+        to: selectedUser,
+        _id: Date.now(),
+      }]));
     }
 
-    if (!newMessage.trim() && !file) {
+       if (!newMessage.trim() && !file) {
       toast.warn("Please enter a message before sending.", {
         position: "bottom-right",
       });
       return;
     }
-  };
+  }
 
   const uploadChatfiles = (e) => {
     const reader = new FileReader();
@@ -416,3 +401,55 @@ const Chat = () => {
 };
 
 export default Chat;
+
+
+
+
+
+
+
+  // const sendMessage = (e, file = null) => {
+  //   // let file = null
+  //   if (e && e.preventDefault()) {e.preventDefault()}
+
+  //      const message = { to: selectedUser, text: newMessage, file };
+
+  //   if (file) {
+  //     // Handle file messages immediately
+  //     const fileName = file.name; // Save the original file name
+  //     setChatMessages((prev) => [
+  //       ...prev,
+  //       {
+  //        // Display the original file name along with the file
+  //         sender: id,
+  //         to: selectedUser,
+  //         createdAt: new Date().toISOString(),
+  //         _id: Date.now(),
+  //         file: fileName, // Save the original file name in the state
+  //       },
+  //     ]);
+  //   } else if (newMessage.trim()) {
+  //     // Handle text messages immediately
+  //     setNewMessage("");
+  //     setChatMessages((prev) => [
+  //       ...prev,
+  //       {
+  //         text: newMessage,
+  //         sender: id,
+  //         to: selectedUser,
+  //         createdAt: new Date().toISOString(),
+  //         _id: Date.now(),
+  //       },
+  //     ]);
+  //   }
+  //   if (!newMessage.trim() && !file) {
+  //     toast.warn('Please enter a message before sending.',
+  //      {
+  //       position: "bottom-right",
+  //     });
+  //     return;
+  // }
+
+  // ws.send(JSON.stringify(message));
+
+  // };

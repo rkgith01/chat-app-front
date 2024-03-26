@@ -91,7 +91,7 @@ const SideNav = ({
           onClick={handleProfileIconClick}
         >
           {/* {console.log(`${apiEndPoint}localhost:3001/images/${image}`)} */}
-          {console.log("sideNav Img:",{image})}
+          {/* {console.log("sideNav Img:",{image})} */}
           <img
             // src={image ? `${apiEndPoint}/localhost:3001/images/${image}` : ""}
             src={image ? `https://chat-app-backend-7xse.onrender.com/images/${image}` : ""}

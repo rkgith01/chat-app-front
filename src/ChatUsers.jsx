@@ -23,7 +23,7 @@ const ChatUsers = ({
         // href="#"
         onClick={() => setSelectedUser(id)}
       >
-        {console.log({image}, "imageid:", image.id)}
+        {/* {console.log({image}, "imageid:", image.id)} */}
         {online && image[id] ? (
           <img
             // src={`${apiEndPoint}images/${image[id]}`}

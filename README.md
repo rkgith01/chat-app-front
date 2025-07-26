@@ -88,8 +88,7 @@ App will start at http://localhost:5173
 ```
 ⚙️ Backend Setup
 ```bash
-Copy
-Edit
+
 cd ../backend
 npm install
 npm run dev
@@ -99,8 +98,7 @@ Backend runs at http://localhost:5000
 
 🔐 Auth & Chat APIs
 ```js
-Copy
-Edit
+
 // Sample login route
 POST /api/auth/login
 {
@@ -109,8 +107,7 @@ POST /api/auth/login
 }
 ```
 ```js
-Copy
-Edit
+
 // Sample message send
 POST /api/chat/message
 {
@@ -119,7 +116,7 @@ POST /api/chat/message
   "text": "Hey there!"
 }
 ```
-🔗 Resources
+### 🔗 Resources
 - Socket.IO Documentation
 
 - MongoDB GridFS
@@ -130,7 +127,7 @@ POST /api/chat/message
 
 - React Toastify
 
-🙌 Support & Contribution
+### 🙌 Support & Contribution
 This project is currently for educational and experimental use. You’re welcome to fork it and explore the code. If you'd like to contribute:
   1. 🍴 Fork the repository
   
@@ -140,7 +137,7 @@ This project is currently for educational and experimental use. You’re welcome
   
   4. 📩 Open a Pull Request with a short description
 
-💡 Future Improvements
+### 💡 Future Improvements
 - Group chats / Channels
 
 - Chat history persistence

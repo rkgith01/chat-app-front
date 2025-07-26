@@ -95,24 +95,7 @@ npm install
 npm run dev
 Backend runs at http://localhost:5000
 ```
-🔧 Project Structure
-Copy
-Edit
-├── frontend/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   └── App.jsx
-├── backend/
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── app.js
-🧩 Component & API Snippets
-Here are a few helpful files you can review or reuse:
 
-🌀 Spinner.jsx
-A simple loading component used across pages.
 
 🔐 Auth & Chat APIs
 ```js

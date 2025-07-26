@@ -4,7 +4,7 @@ A modern real-time chat application built with **React**, **Node.js**, **Express
 
 > Built for learning, exploring modern web stacks, and experimenting with real-time communication.
 
-![Chat App Banner](https://your-banner-image-link.com) <!-- Replace with actual banner if available -->
+![Chat App Banner](https://raw.githubusercontent.com/rkgith01/media/refs/heads/main/All%20Folders/mern/chatapp_11.png) <!-- Replace with actual banner if available -->
 
 ---
 
